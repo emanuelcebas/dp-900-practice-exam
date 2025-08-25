@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Examen DP-900</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- VISTA DE SELECCIÓN DE IDIOMA -->
+    <div id="language-selection-view">
+        <div class="language-box">
+            <h1>Bienvenido / Welcome</h1>
+            <p>Por favor, selecciona un idioma para continuar.</p>
+            <p>Please select a language to continue.</p>
+            <div class="language-buttons">
+                <button class="lang-btn" data-lang="es">Español</button>
+                <button class="lang-btn" data-lang="en">English</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL DE LA APLICACIÓN (OCULTO INICIALMENTE) -->
+    <div id="main-app" style="display: none;">
+        <div class="exam-container">
+            
+            <!-- VISTA DEL EXAMEN (PREGUNTA POR PREGUNTA) -->
+            <div id="exam-view">
+                <div class="exam-header">
+                    <h1 id="exam-title">Simulador de Examen: DP-900</h1>
+                    <div class="header-controls">
+                        <button id="theme-toggle-btn" title="Cambiar tema">🌙</button>
+                        <div id="timer-container">
+                            <span id="timer-label">Tiempo Restante</span>: <span id="timer">40:00</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="question-header">
+                    <h2 id="question-title-text">Cargando pregunta...</h2>
+                    <button id="flag-btn">🚩 Marcar para Revisar</button>
+                </div>
+                <div id="question-content">
+                    <!-- La pregunta actual se insertará aquí -->
+                </div>
+                <div id="navigation-controls">
+                    <button id="prev-btn">Anterior</button>
+                    <span id="question-counter"></span>
+                    <button id="next-btn">Siguiente</button>
+                    <button id="review-btn">Revisar Examen</button>
+                    <button id="back-to-review-btn">↩️ Volver a la Revisión</button>
+                </div>
+            </div>
+
+            <!-- VISTA DE REVISIÓN -->
+            <div id="review-view" style="display: none;">
+                <div class="exam-header">
+                    <h1 id="review-title">Revisa tus Respuestas</h1>
+                    <div class="header-controls">
+                         <button id="theme-toggle-btn-review" title="Cambiar tema">🌙</button>
+                         <div id="timer-container-review">
+                            <span id="timer-label-review">Tiempo Restante</span>: <span id="timer-review">40:00</span>
+                        </div>
+                    </div>
+                </div>
+                <p id="review-instructions">Haz clic en un número para volver a esa pregunta. Respondidas (azul), Marcadas (naranja).</p>
+                <div id="review-grid">
+                    <!-- La cuadrícula de preguntas se generará aquí -->
+                </div>
+                <div class="submission-controls">
+                    <button id="finalize-btn">Finalizar y Calificar Examen</button>
+                </div>
+            </div>
+
+            <!-- VISTA DE RESULTADOS -->
+            <div id="results-view" style="display: none;">
+                <div class="results-header">
+                    <h1 id="results-title">Resultados del Examen</h1>
+                </div>
+                <div id="score-summary"></div>
+                <div id="answers-review-container">
+                    <h2 id="answers-review-title">Revisión de Respuestas</h2>
+                    <div id="answers-review"></div>
+                </div>
+                 <div class="submission-controls">
+                    <button id="restart-btn">Intentar de Nuevo</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
