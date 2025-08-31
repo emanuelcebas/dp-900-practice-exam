@@ -21,6 +21,24 @@
         </div>
     </div>
 
+    <!-- VISTA DE CONFIGURACIÓN DEL EXAMEN -->
+    <div id="exam-config-view" style="display: none;">
+        <div class="exam-config-box">
+            <h1 id="exam-config-title">Configuración del Examen</h1>
+            <div class="config-option">
+                <label for="num-questions">Número de Preguntas:</label>
+                <input type="number" id="num-questions" value="50" min="1" max="276">
+                <button id="max-questions-btn">Máx</button>
+            </div>
+            <div class="config-option">
+                <label for="exam-time">Tiempo del Examen (minutos):</label>
+                <input type="number" id="exam-time" value="40" min="1">
+                <button id="max-time-btn">Máx</button>
+            </div>
+            <button id="start-exam-btn">Comenzar Examen</button>
+        </div>
+    </div>
+
     <!-- CONTENEDOR PRINCIPAL DE LA APLICACIÓN (OCULTO INICIALMENTE) -->
     <div id="main-app" style="display: none;">
         <div class="exam-container">
@@ -78,6 +96,13 @@
                     <h1 id="results-title">Resultados del Examen</h1>
                 </div>
                 <div id="score-summary"></div>
+
+                <div id="category-breakdown" style="margin-top: 30px;">
+                    <h2 style="border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; font-size: 20px; color: var(--primary-text-color);">Rendimiento por Categoría</h2>
+                    <ul id="category-list" style="list-style-type: none; padding: 0;">
+                        <!-- Category results will be inserted here by JS -->
+                    </ul>
+                </div>
                 <div id="answers-review-container">
                     <h2 id="answers-review-title">Revisión de Respuestas</h2>
                     <div id="answers-review"></div>
@@ -90,6 +115,8 @@
         </div>
     </div>
 
+    
+    <script src="dp900_preguntas_respuestas_es.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
